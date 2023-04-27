@@ -152,9 +152,26 @@ public class Personaje {
         this.VEL++;
         this.INT++;
         this.SOR++;
+        this.experiencia = 0;
             actualizarEstadisticasSecundarias();
     }
 
+    public int getPexSiguienteNivel(){
+        switch(this.nivel){
+            case 1:
+                return 100;
+            case 2:
+                return 200;
+            case 3:
+                return 500;
+            case 4:
+                return 1000;
+            case 5:
+                return 2000;
+            default:
+                return Integer.MAX_VALUE;
+        }
+    }
     public void actualizarEstadisticasSecundarias() {
         // Actualizar estadisticas secundarias
             this.PS = this.CON + this.FOR;
