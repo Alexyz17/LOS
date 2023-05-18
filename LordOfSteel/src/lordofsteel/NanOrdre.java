@@ -16,7 +16,7 @@ public class NanOrdre extends Nan implements Ordre{
         
     @Override
     public void restaurarPS(Personatge personatge){
-        int puntSalutInicials = personatge.getPS();
+        int puntSalutInicials = personatge.getCON()+personatge.getFOR();
         int puntSalut = personatge.getPS();
         int puntSalutRestants = (int)(puntSalutInicials*0.1);
         puntSalut += puntSalutRestants;

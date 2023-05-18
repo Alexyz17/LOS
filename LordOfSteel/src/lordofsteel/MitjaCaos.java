@@ -8,14 +8,15 @@ package lordofsteel;
  *
  * @author alex
  */
-public class Nan extends Personatge{
-    
-    public Nan (String NOM, int FOR, int CON, int VEL, int INT, int SOR, Armes arma){
+public abstract class MitjaCaos extends Mitja implements Caos {
+
+    public MitjaCaos(String NOM, int FOR, int CON, int VEL, int INT, int SOR, Armes arma) {
         super(NOM, FOR, CON, VEL, INT, SOR, arma);
     }
-    @Override
-     protected void calculaEstadistiquesSecundaries(){
-         super.calculaEstadistiquesSecundaries();
-         PD = (FOR+WPOW+CON)/4;
-     }
+
+    public int atacPAReduida(Personatge personatge) {
+        int paReduida = (personatge.getPA()/2);
+        return paReduida;
+    }
+
 }

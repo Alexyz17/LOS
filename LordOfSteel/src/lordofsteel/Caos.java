@@ -9,5 +9,5 @@ package lordofsteel;
  * @author alex
  */
 public interface Caos {
-    public boolean atacPAReduida(Dau... d);
+    public int atacPAReduida(Personatge personatge);
 }

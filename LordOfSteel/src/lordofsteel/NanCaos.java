@@ -13,9 +13,10 @@ public class NanCaos extends Nan implements Caos {
     public NanCaos(String NOM, int FOR, int CON, int VEL, int INT, int SOR, Armes arma) {
         super(NOM, FOR, CON, VEL, INT, SOR, arma);
     }
-    
+
     @Override
-    public boolean atacPAReduida(Dau... d){
-        return false;
+    public int atacPAReduida(Personatge personatge) {
+        int paReduida = (personatge.getPA()/2);
+        return paReduida;
     }
 }

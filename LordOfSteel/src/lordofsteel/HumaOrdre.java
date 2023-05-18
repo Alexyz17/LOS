@@ -8,9 +8,22 @@ package lordofsteel;
  *
  * @author alex
  */
-public class HumaOrdre extends Huma implements Ordre {
-    public HumaOrdre(String nom, int forca, int constitucio, int velocitat, int intelligencia, int sort, Arma arma){
-        super(nom,forca,constitucio,velocitat,intelligencia,sort,arma);
+public class HumaOrdre extends Huma implements Ordre{
         
+    public HumaOrdre (String NOM, int FOR, int CON, int VEL, int INT, int SOR, Armes arma){
+        super(NOM, FOR, CON, VEL, INT, SOR, arma);
+    }
+        
+    
+    @Override
+    public void restaurarPS(Personatge personatge){
+        int puntSalutInicials = personatge.getCON()+personatge.getFOR()+personatge.getINT();
+        int puntSalut = personatge.getPS();
+        int puntSalutRestants = (int)(puntSalutInicials*0.1);
+        puntSalut += puntSalutRestants;
+        if(puntSalut>puntSalutInicials){
+            puntSalut=puntSalutInicials;
+        }
+        personatge.setPS(puntSalut);
     }
 }
